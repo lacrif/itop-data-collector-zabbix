@@ -1,2 +1,1 @@
-# docker-itop-data-collector-zabbix
-iTop Data Collector for Zabbix
+# iTop Data Collector for Zabbix
