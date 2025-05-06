@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Default values for parameters. Do NOT alter this file, use params.local.xml instead -->
+<parameters>
+    <itop_url>http://localhost/itop</itop_url>
+    <itop_login>admin</itop_login>
+    <itop_password>admin</itop_password>
+
+    <!-- Zabbix credential -->
+    <zabbix_api_url>http://localhost/zabbix/api_jsonrpc.php</zabbix_api_url>
+    <zabbix_api_token></zabbix_api_token>
+
+    <zabbix_api_software_item_name>Win32_Product</zabbix_api_software_item_name>
+
+    <zabbixsoftwarecollector>
+        <csv_file>collectors/data/ZabbixSoftwareCollector.csv</csv_file>
+        <encoding>UTF-8</encoding>
+        <has_header>yes</has_header>
+        <fields>
+            <primary_key>primary_key</primary_key>
+            <type>type</type>
+            <vendor>vendor</vendor>
+            <name>name</name>
+            <version>version</version>
+        </fields>
+    </zabbixsoftwarecollector>
+
+    <zabbixothersoftwarecollector>
+        <csv_file>collectors/data/ZabbixOtherSoftwareCollector.csv</csv_file>
+        <encoding>UTF-8</encoding>
+        <has_header>yes</has_header>
+        <fields>
+            <primary_key>primary_key</primary_key>
+            <system_id>system_id</system_id>
+            <org_id>org_id</org_id>
+            <name>name</name>
+            <software_id>software_id</software_id>
+            <status>status</status>
+        </fields>
+        <defaults>
+            <org_id>Demo</org_id>
+            <status>active</status>
+        </defaults>
+    </zabbixothersoftwarecollector>
+
+    <!-- Class collection sequence -->
+    <collectors_launch_sequence type="array">
+        <collector>
+            <name>ZabbixSoftwareCollector</name>
+            <enable>yes</enable>
+            <rank>1</rank>
+        </collector>
+        <collector>
+            <name>ZabbixOtherSoftwareCollector</name>
+            <enable>yes</enable>
+            <rank>2</rank>
+        </collector>
+    </collectors_launch_sequence>
+
+    <name_prefix>zabbix</name_prefix>
+    <json_placeholders type="hash">
+        <persons_data_table>synchro_data_$name_prefix$_persons</persons_data_table>
+        <softwares_data_table>synchro_data_$name_prefix$_softwares</softwares_data_table>
+        <othersoftwares_data_table>synchro_data_$name_prefix$_othersoftwares</othersoftwares_data_table>
+        <synchro_status>production</synchro_status>
+        <delete_policy>ignore</delete_policy>l
+        <delete_policy_update></delete_policy_update>
+        <delete_policy_retention>0</delete_policy_retention>
+        <url_icon>https://assets.zabbix.com/img/logo/zabbix_doc.svg</url_icon>
+        <url_application>https://zabbix.prd.gra.intra.groupama.fr</url_application>
+    </json_placeholders>
+</parameters>
