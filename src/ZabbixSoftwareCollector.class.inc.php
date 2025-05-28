@@ -79,7 +79,7 @@ class ZabbixSoftwareCollector extends ZabbixCsvCollector
 				foreach( $aLastValues as $aLastValue ) {
 
 					if (! isset($aLastValue->Vendor) || is_null($aLastValue->Vendor) || $aLastValue->Vendor == "")
-						$aLastValue->Vendor = "Undefined";
+						continue;
 
 					if (! isset($aLastValue->Name) || is_null($aLastValue->Name) || $aLastValue->Name == "")
 						continue;

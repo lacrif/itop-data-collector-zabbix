@@ -65,6 +65,7 @@
         <delete_policy>ignore</delete_policy>l
         <delete_policy_update></delete_policy_update>
         <delete_policy_retention>0</delete_policy_retention>
+        <user_delete_policy>administrators</user_delete_policy>
         <url_icon>https://assets.zabbix.com/img/logo/zabbix_doc.svg</url_icon>
         <url_application>https://zabbix.prd.gra.intra.groupama.fr</url_application>
     </json_placeholders>

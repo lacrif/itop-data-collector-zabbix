@@ -55,7 +55,7 @@
 			"finalclass": "SynchroAttribute"
 		}
 	],
-	"user_delete_policy": "nobody",
+	"user_delete_policy": "$user_delete_policy$",
 	"url_icon": "$url_icon$",
 	"url_application": "$url_application$",
 	"friendlyname": "Software synchro"
